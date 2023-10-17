@@ -17,6 +17,9 @@
     <% if logged_in? %>
       <%= link_to "Profile", user_path(current_user.id) %>
       <%= link_to "Logout",session_path(current_user.id),method: :delete %>
+      <%= button_to "New post", new_picture_path, { method: :get, class:"btn btn-dark" } %>
+      <%= button_to "List", pictures_path, { method: :get, class:"btn btn-secondary" } %>
+
     <% else %>
       <%= link_to "Sing up", new_user_path %>
       <%= link_to "Login", new_session_path %>
