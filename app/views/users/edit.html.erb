@@ -1,0 +1,8 @@
+<h1>icon編集</h1>
+
+<%= form_with(model:@user,local:true) do |f| %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+
+  <%= f.submit "変更" %>
+<% end %>

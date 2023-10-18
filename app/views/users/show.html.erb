@@ -1,1 +1,9 @@
 <h1><%= @user.name %>のページ</h1>
+
+<% if @user.image? %>
+<p>
+  icon:
+  <%= image_tag @user.image.url %>
+</p>
+<% end %>
+<%= link_to 'iconを編集する', edit_user_path(@user.id) %>
