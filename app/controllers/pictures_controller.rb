@@ -6,6 +6,10 @@ class PicturesController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+    if @user == current_user
+      redirect_to pictures_path
+    end
   end
 
   def index

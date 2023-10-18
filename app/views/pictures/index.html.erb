@@ -12,14 +12,15 @@
 
   <tbody>
     <% @pictures.each do |picture| %>
-      <tr>
         <td><%= picture.user.name %></td>
         <td><%= image_tag(picture.image.url) %></td>
         <td><%= picture.content %></td>
         <td><%= l picture.created_at, format: :short %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: '削除していいですか？' } %></td>
+        <td><%= link_to 'Show', picture, class:"btn-outline-secondary btn-sm" %></td>
+        <% if current_user.id == picture.user.id %>
+          <td><%= link_to 'Edit', edit_picture_path(picture), class: "btn btn-outline-info btn-sm" %></td>
+          <td><%= link_to 'Destroy', picture, method: :delete, data: {confirm: '本当に削除しますか？'}, class: "btn btn-outline-warning btn-sm" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
