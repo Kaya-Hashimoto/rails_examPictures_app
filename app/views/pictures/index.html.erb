@@ -16,6 +16,7 @@
         <td><%= picture.user.name %></td>
         <td><%= image_tag(picture.image.url) %></td>
         <td><%= picture.content %></td>
+        <td><%= l picture.created_at, format: :short %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
         <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: '削除していいですか？' } %></td>
