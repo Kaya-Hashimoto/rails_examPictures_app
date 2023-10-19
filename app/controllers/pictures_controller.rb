@@ -9,6 +9,8 @@ class PicturesController < ApplicationController
     @user = User.find(params[:id])
     if @user == current_user
       redirect_to pictures_path
+    else
+      render :edit
     end
   end
 
